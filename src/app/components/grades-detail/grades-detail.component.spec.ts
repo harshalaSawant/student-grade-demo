@@ -3,7 +3,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { asyncScheduler, of, Subject } from 'rxjs';
 import { AppRoutingModule } from 'src/app/app-routing.module';
@@ -198,7 +197,7 @@ const MockStudentService: StudentDetailsService = {
 describe('GradesDetailComponent', () => {
   let component: GradesDetailComponent;
   let fixture: ComponentFixture<GradesDetailComponent>;
-  let service, route;
+  let service;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -207,7 +206,7 @@ describe('GradesDetailComponent', () => {
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        MatTableModule,],
+        MatTableModule],
       providers: [
         {provide: StudentDetailsService, useValue: MockStudentService}
       ],
